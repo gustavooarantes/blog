@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/gustavooarantes/blog/internal/env"
+	"github.com/gustavooarantes/blog/internal/repositories"
 	"github.com/joho/godotenv"
 )
 
@@ -17,8 +18,11 @@ func main() {
 		addr: env.GetString("ADDR", ":8081"),
 	}
 
+	storage := repositories.NewStorage(db) // to do -> implement an actual database
+
 	app := &application{
-		config: cfg,
+		config:  cfg,
+		storage: storage,
 	}
 
 	mux := app.mount()

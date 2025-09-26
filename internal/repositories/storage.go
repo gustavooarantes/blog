@@ -14,7 +14,7 @@ type Storage struct {
 		Create(context.Context, *entities.Post) error
 	}
 	Users interface {
-		Create(context.Context) error
+		Create(context.Context, *entities.User) error
 	}
 }
 

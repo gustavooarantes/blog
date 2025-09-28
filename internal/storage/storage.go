@@ -1,4 +1,4 @@
-// Package storage is responsible for database related things
+// Package storage is responsible for data persistency and etc.
 package storage
 
 import (

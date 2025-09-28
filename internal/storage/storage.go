@@ -1,3 +1,4 @@
+// Package storage is responsible for database related things
 package storage
 
 import (
@@ -7,10 +8,10 @@ import (
 
 type Storage struct {
 	Posts interface {
-		Create(context.Context) error
+		Create(context.Context, *Post) error
 	}
 	Users interface {
-		Create(context.Context) error
+		Create(context.Context, *User) error
 	}
 }
 
